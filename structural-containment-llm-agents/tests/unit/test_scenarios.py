@@ -82,6 +82,7 @@ def test_containment_excludes_initially_compromised_agents():
 
     assert result.contained_agents == ("b",)
 
+
 def test_budget_cannot_exceed_eligible_agents():
     graph = nx.DiGraph([("a", "b")])
 

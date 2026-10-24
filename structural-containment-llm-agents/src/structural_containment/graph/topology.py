@@ -1,4 +1,3 @@
-
 """Topology analysis for directed agent-interaction networks."""
 
 from __future__ import annotations
@@ -23,18 +22,14 @@ def directed_random_graph(
     if node_count < 0:
         raise ValueError("node_count must be non-negative.")
 
-    if isinstance(edge_probability, bool) or not isinstance(
-        edge_probability, (int, float)
-    ):
+    if isinstance(edge_probability, bool) or not isinstance(edge_probability, (int, float)):
         raise TypeError("edge_probability must be a real number.")
 
     probability = float(edge_probability)
     if not math.isfinite(probability) or not 0.0 <= probability <= 1.0:
         raise ValueError("edge_probability must be finite and between 0 and 1.")
 
-    if seed is not None and (
-        isinstance(seed, bool) or not isinstance(seed, int)
-    ):
+    if seed is not None and (isinstance(seed, bool) or not isinstance(seed, int)):
         raise TypeError("seed must be an integer or None.")
 
     return nx.gnp_random_graph(
@@ -77,10 +72,7 @@ def strongly_connected_components(
 
     validate_directed_graph(graph)
 
-    components = (
-        frozenset(component)
-        for component in nx.strongly_connected_components(graph)
-    )
+    components = (frozenset(component) for component in nx.strongly_connected_components(graph))
     return tuple(
         sorted(
             components,

@@ -1,4 +1,3 @@
-
 import pytest
 
 from structural_containment.graph.builder import build_directed_graph

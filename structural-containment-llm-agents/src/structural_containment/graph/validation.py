@@ -1,4 +1,3 @@
-
 """Validation contracts for agent-interaction graphs."""
 
 from __future__ import annotations

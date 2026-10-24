@@ -1,4 +1,3 @@
-
 """Construction utilities for directed agent-interaction graphs."""
 
 from __future__ import annotations
@@ -67,14 +66,10 @@ def build_directed_graph(
         try:
             endpoints = tuple(edge)
         except TypeError as exc:
-            raise TypeError(
-                f"Edge at index {index} must be an iterable of two endpoints."
-            ) from exc
+            raise TypeError(f"Edge at index {index} must be an iterable of two endpoints.") from exc
 
         if len(endpoints) != 2:
-            raise ValueError(
-                f"Edge at index {index} must contain exactly two endpoints."
-            )
+            raise ValueError(f"Edge at index {index} must contain exactly two endpoints.")
 
         source, target = endpoints
 
@@ -82,9 +77,7 @@ def build_directed_graph(
             raise TypeError(f"Edge at index {index} must use string identifiers.")
 
         if source not in seen_nodes or target not in seen_nodes:
-            raise ValueError(
-                f"Edge ({source!r}, {target!r}) references an unknown node."
-            )
+            raise ValueError(f"Edge ({source!r}, {target!r}) references an unknown node.")
 
         if source == target and not allow_self_loops:
             raise ValueError(f"Self-loop at {source!r} is not allowed.")

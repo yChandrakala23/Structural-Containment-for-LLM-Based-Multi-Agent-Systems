@@ -1,4 +1,3 @@
-
 """Tests for graph topology operations."""
 
 import networkx as nx

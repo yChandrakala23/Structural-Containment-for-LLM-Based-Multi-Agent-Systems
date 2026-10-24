@@ -1,4 +1,3 @@
-
 """Contract and edge-case tests for the graph foundation."""
 
 import networkx as nx
